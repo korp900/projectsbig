@@ -1,0 +1,10 @@
+<Route path="/addshell" render={() => <AddSell changeH1={this.changeH1}/>}/>
+                    <Route path="/addpost" render={() => <AddPost changeH1={this.changeH1}/>}/>
+                    <Route path="/addbuy" render={() => <Addbuy changeH1={this.changeH1}/>}/>
+                    <Route path="/adminmenu" render={() => <AdminMenu changeH1={this.changeH1}/>}/>
+                    <Route path="/main" render={() => <Main changeH1={this.changeH1}/>}/>
+                    <Route path="/tax" render={() => <Tax changeH1={this.changeH1}/>}/>
+                    <Route path="/blog" render={() => <Blog changeH1={this.changeH1}/>}/>
+                    <Route path="/service" render={() => <Service changeH1={this.changeH1}/>}/>
+                    <Route path="/userpage" render={() => <UserPage changeH1={this.changeH1}/>}/>
+                    <Route path="/single" render={() => <Single changeH1={this.changeH1}/>}/>
