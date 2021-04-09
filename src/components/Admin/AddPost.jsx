@@ -3,7 +3,8 @@ import React from "react";
 export class AddPost extends React.Component{
     render() {
         return(
-            console.log("hi")
+            <h1>Добовление новостей</h1>
+
         );
     }
 }
