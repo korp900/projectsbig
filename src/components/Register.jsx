@@ -74,19 +74,19 @@ export class Register extends React.Component {
     }
 
     render() {
-        return <div className="col-md-5 my-5 mx-auto">
-            <h1 className="text-center my-3">Регистрация на сайте</h1>
-            <form onSubmit={this.sendForm}>
-                <div className="mb-3">
-                    <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text"
-                           className="form-control" placeholder="Имя"/>
-                </div>
-                <div className="mb-3">
-                    <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text"
-                           className="form-control" placeholder="Фамилия"/>
-                </div>
-                <div className="mb-3">
-                    <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"
+        return (<div className="col-md-5 m-5 mx-auto ">
+                <form className="m-5" onSubmit={this.sendForm}>
+                    <h1 className="text-center m-5 pt-5 my-3 ">Регистрация на сайте</h1>
+                    <div className="mb-3">
+                        <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text"
+                               className="form-control" placeholder="Имя"/>
+                    </div>
+                    <div className="mb-3">
+                        <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text"
+                               className="form-control" placeholder="Фамилия"/>
+                    </div>
+                    <div className="mb-3">
+                        <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"
                            className="form-control" placeholder="E-mail"/>
                     <p style={{color: "red"}}>{this.state.info}</p>
                 </div>
@@ -100,5 +100,6 @@ export class Register extends React.Component {
                 </div>
             </form>
         </div>
+        )
     }
 }
