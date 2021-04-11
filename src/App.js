@@ -34,7 +34,7 @@ class App extends React.Component {
             h1: title
         })
     }
-
+//проверка комита
     render() {
         return (<div>
                 <BrowserRouter>
