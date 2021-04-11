@@ -42,7 +42,7 @@ class App extends React.Component {
                     <PageHeader h1={this.state.h1}/>
                     <Route exact path="/" render={() => <Post/>}/>
                     <Route path="/about" render={() => <About/>}/>
-                    <Route path="/contact" render={() => <Contact/>}/>
+                    <Route path="/contact" render={()=><Contact changeH1={this.changeH1}/>}/>
                     <Route path="/auth" render={() => <Auth/>}/>
                     <Route path="/register" render={() => <Register/>}/>
                     <Route path="/addshell" render={() => <AddSell/>}/>
