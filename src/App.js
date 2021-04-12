@@ -44,6 +44,7 @@ class App extends React.Component {
                     <Route path="/about" render={() => <About/>}/>
                     <Route path="/contact" render={()=><Contact changeH1={this.changeH1}/>}/>
                     <Route path="/auth" render={() => <Auth/>}/>
+                    <Route path="/blog" render={() => <Blog changeH1={this.changeH1}/>}/>
                     <Route path="/register" render={() => <Register/>}/>
                     <Route path="/addshell" render={() => <AddSell/>}/>
                     <Route path="/addpost" render={() => <AddPost/>}/>
@@ -51,7 +52,6 @@ class App extends React.Component {
                     <Route path="/adminmenu" render={() => <AdminMenu/>}/>
                     <Route path="/main" render={() => <Main/>}/>
                     <Route path="/tax" render={() => <Tax/>}/>
-                    <Route path="/blog" render={() => <Blog/>}/>
                     <Route path="/service" render={() => <Service/>}/>
                     <Route path="/userpage" render={() => <UserPage/>}/>
                     <Route path="/single" render={() => <Single/>}/>
