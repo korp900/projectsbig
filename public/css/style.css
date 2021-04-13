@@ -60,25 +60,38 @@ h1, h2, h3, h4, h5,
   right: 0;
   bottom: 0;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 .offcanvas-menu .site-wrap {
   height: 100%;
   width: 100%;
-  z-index: 2; }
-  .offcanvas-menu .site-wrap:before {
-    opacity: 1;
-    visibility: visible; }
+  z-index: 2;
+}
+
+.offcanvas-menu .site-wrap:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.height-1 {
+  heigth: 150px;
+  width: 100%;
+}
 
 .line-height-1 {
-  line-height: 1 !important; }
+  line-height: 1 !important;
+}
 
 .bg-black {
-  background: #000; }
+  background: #000;
+}
 
 .site-section {
-  padding: 2.5em 0; }
-  @media (min-width: 768px) {
+  padding: 2.5em 0;
+}
+
+@media (min-width: 768px) {
     .site-section {
       padding: 5em 0; } }
   .site-section.site-section-sm {

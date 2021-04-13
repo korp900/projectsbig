@@ -34,27 +34,27 @@ class App extends React.Component {
             h1: title
         })
     }
-//проверка комита
+
     render() {
         return (<div>
                 <BrowserRouter>
                     <Menu/>
                     <PageHeader h1={this.state.h1}/>
-                    <Route exact path="/" render={() => <Post/>}/>
-                    <Route path="/about" render={() => <About/>}/>
-                    <Route path="/contact" render={()=><Contact changeH1={this.changeH1}/>}/>
-                    <Route path="/auth" render={() => <Auth/>}/>
+                    <Route exact path="/" render={() => <Post changeH1={this.changeH1}/>}/>
+                    <Route path="/about" render={() => <About changeH1={this.changeH1}/>}/>
+                    <Route path="/contact" render={() => <Contact changeH1={this.changeH1}/>}/>
+                    <Route path="/auth" render={() => <Auth changeH1={this.changeH1}/>}/>
                     <Route path="/blog" render={() => <Blog changeH1={this.changeH1}/>}/>
-                    <Route path="/register" render={() => <Register/>}/>
-                    <Route path="/addshell" render={() => <AddSell/>}/>
-                    <Route path="/addpost" render={() => <AddPost/>}/>
-                    <Route path="/addbuy" render={() => <Addbuy/>}/>
+                    <Route path="/register" render={() => <Register changeH1={this.changeH1}/>}/>
+                    <Route path="/addshell" render={() => <AddSell changeH1={this.changeH1}/>}/>
+                    <Route path="/addpost" render={() => <AddPost changeH1={this.changeH1}/>}/>
+                    <Route path="/addbuy" render={() => <Addbuy changeH1={this.changeH1}/>}/>
                     <Route path="/adminmenu" render={() => <AdminMenu/>}/>
-                    <Route path="/main" render={() => <Main/>}/>
-                    <Route path="/tax" render={() => <Tax/>}/>
-                    <Route path="/service" render={() => <Service/>}/>
-                    <Route path="/userpage" render={() => <UserPage/>}/>
-                    <Route path="/single" render={() => <Single/>}/>
+                    <Route path="/main" render={() => <Main changeH1={this.changeH1}/>}/>
+                    <Route path="/tax" render={() => <Tax changeH1={this.changeH1}/>}/>
+                    <Route path="/service" render={() => <Service changeH1={this.changeH1}/>}/>
+                    <Route path="/userpage" render={() => <UserPage changeH1={this.changeH1}/>}/>
+                    <Route path="/single" render={() => <Single changeH1={this.changeH1}/>}/>
                     <Footer/>
                 </BrowserRouter>
             </div>
