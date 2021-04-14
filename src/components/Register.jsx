@@ -4,14 +4,21 @@ import {host} from "../config";
 export class Register extends React.Component {
     constructor() {
         super();
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.sendForm = this.sendForm.bind(this);
         this.state = {
             email: "",
             pass: "",
-            info: "",
             info_ok: "",
         }
+        this.sendForm = this.sendForm.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value
+        })
     }
 
     sendForm(event) {
@@ -33,42 +40,10 @@ export class Register extends React.Component {
                     })
                 } else {
                     this.setState({
-                        info: "Пользователь с таким email уже существует. Используйте другой email.",
-                        info_ok: ""
+                        info_ok: "Пользователь с таким email уже существует. Используйте другой email."
                     })
                 }
             })
-    }
-
-
-    handleInputChange(event) {
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name]: value
-        })
-
-        if (name === "email") {
-            const formData = new FormData();
-            formData.append("email", value);
-            fetch(host+"http://http://f92553mg.beget.tech/php/checkEmail.php", {
-                credentials: 'include',
-                method: "POST",
-                body: formData
-            }).then(response => response.json())
-                .then(result => {
-                    console.log(result.result);
-                    if (result.result === "exist") {
-                        this.setState({
-                            info: "handleInputChange: Пользователь с таким email уже существует. Используйте другой email."
-                        })
-                    } else {
-                        this.setState({
-                            info: ""
-                        })
-                    }
-                });
-        }
     }
 
     render() {
@@ -76,12 +51,11 @@ export class Register extends React.Component {
                 <form className="m-5" onSubmit={this.sendForm}>
                     <h1 className="text-center m-5 pt-5 my-3 ">Регистрация на сайте</h1>
                     <div className="mb-3">
-                        <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"
-                           className="form-control" placeholder="E-mail"/>
-                    <p style={{color: "red"}}>{this.state.info}</p>
+                        <input name="email" type="email" value={this.state.email} onChange={this.handleInput}
+                               className="form-control" placeholder="E-mail"/>
                 </div>
                 <div className="mb-3">
-                    <input value={this.state.pass} onChange={this.handleInputChange} name="pass" type="password"
+                    <input name="pass" type="password" value={this.state.pass} onChange={this.handleInput}
                            className="form-control" placeholder="Пароль"/>
                 </div>
                 <div className="mb-3">
