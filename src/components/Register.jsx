@@ -1,4 +1,5 @@
 import React from "react";
+import {host} from "../config";
 
 export class Register extends React.Component {
     constructor() {
@@ -24,7 +25,8 @@ export class Register extends React.Component {
         formData.append("lastname", this.state.lastname);
         formData.append("email", this.state.email);
         formData.append("pass", this.state.pass);
-        fetch("http://f92553mg.beget.tech/php/handlerReg.php", {
+        fetch(host+"/registration", {
+            credentials: 'include',
             method: "POST",
             body: formData
         }).then(response => response.json())

@@ -1,4 +1,5 @@
 import React from 'react';
+import {host} from "../config";
 
 export class Auth extends React.Component {
     constructor(props) {
@@ -24,7 +25,8 @@ export class Auth extends React.Component {
         const formData = new FormData();
         formData.append("email", this.state.email);
         formData.append("pass", this.state.pass);
-        fetch("http://f92553mg.beget.tech/php/handlerAuth.php", {
+        fetch(host+"/login", {
+            credentials: 'include',
             method: "POST",
             body: formData
         })
