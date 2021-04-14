@@ -15,7 +15,7 @@ export class Menu extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
-                            <NavLink className="nav-link" to="/auth">Auth</NavLink>
+                            <NavLink className="nav-link" to="/login">Auth</NavLink>
                             <NavLink className="nav-link" to="/register">Register</NavLink>
                             <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             <NavLink className="nav-link disabled" to="/userpage" tabIndex="-1"

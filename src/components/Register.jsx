@@ -7,8 +7,6 @@ export class Register extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.sendForm = this.sendForm.bind(this);
         this.state = {
-            name: "",
-            lastname: "",
             email: "",
             pass: "",
             info: "",
@@ -17,12 +15,9 @@ export class Register extends React.Component {
     }
 
     sendForm(event) {
-        {/* event.preventDefault() - Изменяем поведение браузера по умолчанию */
-        }
+        {/* event.preventDefault() - Изменяем поведение браузера по умолчанию */}
         event.preventDefault();
         const formData = new FormData();
-        formData.append("name", this.state.name);
-        formData.append("lastname", this.state.lastname);
         formData.append("email", this.state.email);
         formData.append("pass", this.state.pass);
         fetch(host+"/registration", {
@@ -56,7 +51,8 @@ export class Register extends React.Component {
         if (name === "email") {
             const formData = new FormData();
             formData.append("email", value);
-            fetch("http://f92553mg.beget.tech/php/checkEmail.php", {
+            fetch(host+"http://http://f92553mg.beget.tech/php/checkEmail.php", {
+                credentials: 'include',
                 method: "POST",
                 body: formData
             }).then(response => response.json())
@@ -79,14 +75,6 @@ export class Register extends React.Component {
         return (<div className="col-md-5 m-5 mx-auto ">
                 <form className="m-5" onSubmit={this.sendForm}>
                     <h1 className="text-center m-5 pt-5 my-3 ">Регистрация на сайте</h1>
-                    <div className="mb-3">
-                        <input value={this.state.name} onChange={this.handleInputChange} name="name" type="text"
-                               className="form-control" placeholder="Имя"/>
-                    </div>
-                    <div className="mb-3">
-                        <input value={this.state.lastname} onChange={this.handleInputChange} name="lastname" type="text"
-                               className="form-control" placeholder="Фамилия"/>
-                    </div>
                     <div className="mb-3">
                         <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"
                            className="form-control" placeholder="E-mail"/>

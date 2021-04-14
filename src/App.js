@@ -43,7 +43,7 @@ class App extends React.Component {
                     <Route exact path="/" render={() => <Post changeH1={this.changeH1}/>}/>
                     <Route path="/about" render={() => <About changeH1={this.changeH1}/>}/>
                     <Route path="/contact" render={() => <Contact changeH1={this.changeH1}/>}/>
-                    <Route path="/auth" render={() => <Auth changeH1={this.changeH1}/>}/>
+                    <Route path="/login" render={() => <Auth changeH1={this.changeH1}/>}/>
                     <Route path="/blog" render={() => <Blog changeH1={this.changeH1}/>}/>
                     <Route path="/register" render={() => <Register changeH1={this.changeH1}/>}/>
                     <Route path="/addshell" render={() => <AddSell changeH1={this.changeH1}/>}/>
